@@ -6,7 +6,7 @@ export class Image {
 @Injectable()
 export class ImageService {
 	console.log(imagesPromise);
-	getImages() { return imagesPromise; }
+	//getImages() { return imagesPromise; }
 }
 
 var IMAGES = [
@@ -27,4 +27,14 @@ var IMAGES = [
 ];
 
 var imagesPromise = Promise.resolve(IMAGES);
-console.log(imagesPromise);
+
+// var x=Math.floor((Math.random() * 10) + 1);
+// var y=Math.floor((Math.random() * 10) + 1);
+// var firstImage=IMAGES[x];
+// var secondImage=IMAGES[y];
+// var twoImages=[];
+// twoImages.push(firstImage);
+// twoImages.push(secondImage);
+// console.log(twoImages);
+// var imagesPromise = Promise.resolve(twoImages);
+// console.log(imagesPromise);

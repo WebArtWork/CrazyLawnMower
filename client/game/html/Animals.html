@@ -1,9 +1,9 @@
 <div id="animalpage">
-    <div class="linktogarden" (click)="onSelect()">GO TO GARDEN GAME</div>
-    <div class="animalcell">
-        <img [src]="'/game/image/dog.svg'" />
-    </div>
-    <div class="animalcell">
-        <img [src]="'/game/image/cow.svg'" />
-    </div>
+	<div class="linktogarden" (click)="onSelect()">GO TO GARDEN GAME</div>
+	<div class="animalcell">
+		<img [src]="'/game/image/dog.svg'" (click)="onSelect()" />
+	</div>
+	<div class="animalcell">
+		<img [src]="'/game/image/cow.svg'" (click)="onSelect()" />
+	</div>
 </div>

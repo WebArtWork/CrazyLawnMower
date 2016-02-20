@@ -16,11 +16,11 @@ export class Animals implements OnInit{
 	onSelect() {
 		this._router.navigate(['Garden']);
 	}
-	console.log(Image);
-	images: Image[];
-
-	ngOnInit() {
-	   this._service.getImages().then(images => this.images = images)
-	 }
+	console.log(Math.floor((Math.random() * 10) + 1));
+	 var images: Image[];
+	 console.log(images);
+	// ngOnInit() {
+	//    this._service.getImages().then(images => this.images = images)
+	//  }
 
 }
