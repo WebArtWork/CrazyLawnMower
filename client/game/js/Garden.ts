@@ -12,7 +12,7 @@ import {Weed} from '/game/js/Weed.ts';
 	}
 })
 export class Garden{
-	left: number = 20;
+	left: number = 320;
 	top: number = 120;
 	constructor(private _router: Router, private _weed: Weed){
 	}
