@@ -24,25 +24,27 @@ export class Animals implements OnInit{
 	];
 
 	constructor(private _router: Router){}
-	onSelect(animal) {
-		var audio = new Audio(animal.sound);
-		audio.play();
-		setTimeout(() => {
-			audio.pause();
-			this._router.navigate(['Garden']);
-		},5000);
+	onSelect(animal) {		
+		if (alow) {
+			var audio = new Audio(animal.sound);
+			audio.play();
+			setTimeout(() => {
+				audio.pause();
+				this._router.navigate(['Garden']);
+			},5000);
+		}
+
 	}
 	onGarden() {
 		this._router.navigate(['Garden']);
 	}
 
 	ngOnInit() {
-		x=Math.floor((Math.random() * 14) + 1);
-		y=Math.floor((Math.random() * 14) + 1);
+		x=Math.floor((Math.random() * 13) + 1);
+		y=Math.floor((Math.random() * 13) + 1);
 		if (x==y) x=x+1;
+		console.log(x,y);
 		this.firstImage=this.IMAGES[x];
 		this.secondImage=this.IMAGES[y];
-		console.log(this.firstImage);
-		console.log(this.secondImage);
 	 }
 }
