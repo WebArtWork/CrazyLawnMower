@@ -17,9 +17,20 @@ module.exports = function(app) {
 	app.get('/game/*', function(req, res) {
 		res.sendFile(__dirname+'/client/game/' + req.params[0]);
 	});
-	app.get('/', function(req, res) {
+	app.get('/Garden', function(req, res) {
 		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
-
-
-}
+	app.get('/Animals', function(req, res) {
+		res.sendFile(__dirname+'/client/game/html/index.html');
+	});
+	// Public
+	app.get('/public/*', function(req, res) {
+		res.sendFile(__dirname+'/client/public/' + req.params[0]);
+	});
+	app.get('/', function(req, res) {
+		res.sendFile(__dirname+'/public/html/index.html');
+	});
+	app.get('*', function(req, res) {
+		res.sendFile(__dirname+'/public/html/index.html');
+	});
+};
