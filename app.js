@@ -16,8 +16,9 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.set('view cache', true);
-//app.use(favicon(__dirname + '/client/public/img/favicon.png'));
+app.use(favicon(__dirname + '/client/public/img/favicon.png'));
 
 
 require(__dirname+'/routes.js')(app);
 app.listen(port);
+console.log('Server is running on port '+port);
