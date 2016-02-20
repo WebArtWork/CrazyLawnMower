@@ -10,7 +10,7 @@ module.exports = function(app) {
 	}));
 
 	// Game
-	app.get('/node_modules/*', function(req, res) {
+	app.get('/node_modules/*',ensureUser, function(req, res) {
 		res.sendFile(__dirname+'/node_modules/' + req.params[0]);
 	});
 	// Public
@@ -21,14 +21,19 @@ module.exports = function(app) {
 		res.sendFile(__dirname+'/client/public/html/index.html');
 	});
 	// Game
-	app.get('/game/*', function(req, res) {
+	app.get('/game/*',ensureUser, function(req, res) {
 		res.sendFile(__dirname+'/client/game/' + req.params[0]);
 	});
-	app.get('/', function(req, res) {
+	app.get('/',ensureUser, function(req, res) {
 		console.log(req.user);
 		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
-	app.get('*', function(req, res) {
+	app.get('*',ensureUser, function(req, res) {
 		res.redirect('/');
 	});
 };
+
+function ensureUser(req, res, next) {
+	if (req.isAuthenticated()) return next();
+	else res.redirect('/');
+}

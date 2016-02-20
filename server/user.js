@@ -17,6 +17,7 @@ module.exports = function(app, passport, express) {
 };
 // } ensure user login{
 	function isLoggedIn(req, res, next) {
+		console.log(req.isAuthenticated());
 		if (req.isAuthenticated()) return next();
 		res.send(false);
 	};
