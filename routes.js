@@ -28,9 +28,9 @@ module.exports = function(app) {
 		res.sendFile(__dirname+'/client/public/' + req.params[0]);
 	});
 	app.get('/', function(req, res) {
-		res.sendFile(__dirname+'/public/html/index.html');
+		res.sendFile(__dirname+'/client/public/html/index.html');
 	});
 	app.get('*', function(req, res) {
-		res.sendFile(__dirname+'/public/html/index.html');
+		res.sendFile(__dirname+'/client/public/html/index.html');
 	});
 };
