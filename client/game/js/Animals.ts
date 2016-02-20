@@ -7,37 +7,34 @@ import {TimerWrapper} from 'angular2/src/core/facade/async';
 })
 export class Animals implements OnInit{
 	IMAGES = [
-		new Image('bird', '/game/image/bird.svg','/game/image/bird.mp3'),
-		new Image('cat', '/game/image/cat.svg','/game/image/cat.mp3'),
-		new Image('chicken', '/game/image/chicken.svg','/game/image/chicken.mp3'),
-		new Image('cock', '/game/image/cock.svg','/game/image/cock.mp3'),
-		new Image('cow', '/game/image/cow.svg','/game/image/cow.mp3'),
-		new Image('dog', '/game/image/dog.svg','/game/image/dog.mp3')
-		new Image('dolphin', '/game/image/dolphin.svg','/game/image/dolphin.mp3')
-		new Image('goat', '/game/image/goat.svg','/game/image/goat.mp3')
-		new Image('grig', '/game/image/grig.svg','/game/image/grig.mp3')
-		new Image('lion', '/game/image/lion.svg','/game/image/lion.mp3')
-		new Image('monkey', '/game/image/monkey.svg','/game/image/monkey.mp3')
-		new Image('pick', '/game/image/pick.svg','/game/image/pick.mp3')
-		new Image('sheep', '/game/image/sheep.svg','/game/image/sheep.mp3')
-		new Image('wolf', '/game/image/wolf.svg','/game/image/wolf.mp3')
+		{name: 'bird', pathImage: '/game/image/bird.svg', sound: '/game/image/bird.mp3'},
+		{name: 'cat', pathImage:'/game/image/cat.svg',sound:'/game/image/cat.mp3'},
+		{name: 'chicken', pathImage:'/game/image/chicken.svg',sound:'/game/image/chicken.mp3'},
+		{name: 'cock', pathImage:'/game/image/cock.svg',sound:'/game/image/cock.mp3'},
+		{name: 'cow', pathImage:'/game/image/cow.svg',sound:'/game/image/cow.mp3'},
+		{name: 'dog', pathImage:'/game/image/dog.svg',sound:'/game/image/dog.mp3'},
+		{name: 'dolphin', pathImage:'/game/image/dolphin.svg',sound:'/game/image/dolphin.mp3'},
+		{name: 'goat', pathImage:'/game/image/goat.svg',sound:'/game/image/goat.mp3'},
+		{name: 'grig', pathImage:'/game/image/grig.svg',sound:'/game/image/grig.mp3'},
+		{name: 'lion',pathImage: '/game/image/lion.svg',sound:'/game/image/lion.mp3'},
+		{name: 'monkey', pathImage:'/game/image/monkey.svg',sound:'/game/image/monkey.mp3'},
+		{name: 'pick', pathImage:'/game/image/pick.svg',sound:'/game/image/pick.mp3'},
+		{name: 'sheep',pathImage: '/game/image/sheep.svg',sound:'/game/image/sheep.mp3'},
+		{name: 'wolf', pathImage:'/game/image/wolf.svg',sound:'/game/image/wolf.mp3'}
 	];
-	console.log(IMAGES);
+
 	constructor(
 		private _router: Router){
 
 	}
 	onSelect() {
-
 		this._router.navigate(['Garden']);
 	}
-	// console.log(Math.floor((Math.random() * 10) + 1));
-	//  var images: Image[];
-	//  console.log(images);
 	ngOnInit() {
-	   //this._service.getImages().then(images => this.images = images)
+		x=Math.floor((Math.random() * 10) + 1);
+		y=Math.floor((Math.random() * 10) + 1);
+		if (x==y) x=x+1;
+		this.firstImage=this.IMAGES[x];
+		this.secondImage=this.IMAGES[y];
 	 }
-
-
-
 }
