@@ -5,8 +5,9 @@
 	"dependencies": {
 		"body-parser": "*",
 		"cookie-parser": "*",
+		"connect-mongo": "*",
 		"express": "*",
-		  "express-session": "*",
+		"express-session": "*",
 		"mongoose": "*",
 		"method-override": "*",
 		"morgan": "*",
