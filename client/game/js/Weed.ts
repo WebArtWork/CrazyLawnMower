@@ -1,26 +1,26 @@
 import {Component, OnInit} from 'angular2/core';
 
 @Component({
-	selector: 'grass',
-	templateUrl: `/game/html/grass.svg`,
+	selector: 'weed',
+	templateUrl: `/game/html/weed.svg`,
 })
 export class Weed implements OnInit {
-	grass: number = 0;
+	weed: number = 0;
 	timeout: string;
 	counter: number = 0;
 
 	constructor(){
-		console.log('initialize the grass');
+		console.log('initialize the weed');
 		this.levelUpWeed();
 	}
 	initWeed(){
 		clearTimeout(this.timeout);
-		this.grass=0;
+		this.weed=0;
 		this.levelUpWeed();		
 	}
 	levelUpWeed(){
 		this.timeout = setTimeout(function(){
-			if(++this.grass<5) this.levelUpWeed();
+			if(++this.weed<5) this.levelUpWeed();
 		}, 1000);
 	}
 }
