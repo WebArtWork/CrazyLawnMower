@@ -1,0 +1,15 @@
+{
+	"name": "CrazyLawnMower",
+	"version": "1.0.0",
+	"main": "app.js",
+	"dependencies": {
+		"body-parser": "*",
+		"cookie-parser": "*",
+		"express": "*",
+		"method-override": "*",
+		"morgan": "*",
+		"node-sass-middleware": "*",
+		"serve-favicon": "*"
+	},
+	"description": "A game for children age of 1-2 with target of they learning handling mouse."
+}
