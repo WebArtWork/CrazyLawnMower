@@ -4,11 +4,18 @@ import {Router} from 'angular2/router';
 @Component({
 	templateUrl: `/game/html/Garden.html`,
 })
-export class Garden{
+export class Garden implements OnInit {
+
 	constructor(private _router: Router){
-		
+
 	}
 	onSelect() {
 		this._router.navigate(['Animals']);
+	}
+	onSelectGrass() {
+		console.log('onSelectGrass');
+	}
+	ngOnInit() {
+		console.log('init called');
 	}
 }
