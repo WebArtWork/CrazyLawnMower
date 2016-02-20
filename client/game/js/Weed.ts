@@ -5,7 +5,7 @@ import {Component, OnInit} from 'angular2/core';
 	templateUrl: `/game/html/weed.svg`,
 })
 export class Weed implements OnInit {
-	weed: number = 0;
+	weed: number = 1;
 	timeout: string;
 	counter: number = 0;
 
@@ -20,7 +20,7 @@ export class Weed implements OnInit {
 	}
 	levelUpWeed(){
 		this.timeout = setTimeout(function(){
-			if(++this.weed<5) this.levelUpWeed();
+			if(++this.weed<6) this.levelUpWeed();
 		}, 1000);
 	}
 }
