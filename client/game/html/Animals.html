@@ -1,9 +1,10 @@
 <div id="animalpage">
 	<div class="linktogarden" (click)="onSelect()">GO TO GARDEN GAME</div>
 	<div class="animalcell">
-		<img [src]="'/game/image/dog.svg'" (click)="onSelect()" />
+		<img [src]="firstImage.pathImage" (click)="onSelect()" />
 	</div>
 	<div class="animalcell">
-		<img [src]="'/game/image/cow.svg'" (click)="onSelect()" />
+		<img [src]="secondImage.pathImage" (click)="onSelect()" />
 	</div>
 </div>
+'{{secondImage.pathImage}}'
