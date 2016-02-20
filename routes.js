@@ -25,16 +25,9 @@ module.exports = function(app) {
 		res.sendFile(__dirname+'/client/game/' + req.params[0]);
 	});
 	app.get('/', function(req, res) {
-<<<<<<< HEAD
 		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
 	app.get('*', function(req, res) {
 		res.redirect('/');
-=======
-		res.sendFile(__dirname+'/client/public/html/index.html');
-	});
-	app.get('*', function(req, res) {
-		res.sendFile(__dirname+'/client/public/html/index.html');
->>>>>>> be99761a1a43dc0de837f52277be16dad68f58a4
 	});
 };
