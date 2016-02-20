@@ -4,10 +4,9 @@ import {Component, OnInit} from 'angular2/core';
 	selector: 'weed',
 	templateUrl: `/game/html/weed.svg`,
 })
-export class Weed implements OnInit {
-	weed: number = 1;
+export class Weed {
+	level: number = 1;
 	timeout: string;
-	counter: number = 0;
 
 	constructor(){
 		console.log('initialize the weed');
@@ -15,12 +14,13 @@ export class Weed implements OnInit {
 	}
 	initWeed(){
 		clearTimeout(this.timeout);
-		this.weed=0;
+		this.level=1;
 		this.levelUpWeed();		
 	}
 	levelUpWeed(){
-		this.timeout = setTimeout(function(){
-			if(++this.weed<6) this.levelUpWeed();
-		}, 1000);
+		setTimeout(() => {
+			console.log('weed level '+this.level);
+			if(++this.level<6) this.levelUpWeed();
+		},1000);
 	}
 }

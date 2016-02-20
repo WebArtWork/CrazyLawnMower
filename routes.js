@@ -24,8 +24,10 @@ module.exports = function(app) {
 	app.get('/game/*',ensureUser, function(req, res) {
 		res.sendFile(__dirname+'/client/game/' + req.params[0]);
 	});
+	app.get('/Animals',ensureUser, function(req, res) {
+		res.sendFile(__dirname+'/client/game/html/index.html');
+	});
 	app.get('/',ensureUser, function(req, res) {
-		console.log(req.user);
 		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
 	app.get('*',ensureUser, function(req, res) {
