@@ -7,8 +7,7 @@ import {Grass} from '/game/js/Grass.ts';
 	bindings: [Grass]
 })
 export class Garden{
-	constructor(private _router: Router){
-		_grass.ngOnInit();
+	constructor(private _router: Router, private _grass: Grass){
 	}
 	onSelect() {
 		this._router.navigate(['Animals']);
