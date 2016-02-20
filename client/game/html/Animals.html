@@ -1,10 +1,14 @@
 <div id="animalpage">
-	<div class="linktogarden" (click)="onSelect()">GO TO GARDEN GAME</div>
+	<div class="linktogarden" (click)="onGarden()">GO TO GARDEN GAME</div>
 	<div class="animalcell">
-		<img [src]="firstImage.pathImage" (click)="onSelect()" />
+		<img [src]="firstImage.pathImage" (click)="onSelect(firstImage)" />
 	</div>
 	<div class="animalcell">
-		<img [src]="secondImage.pathImage" (click)="onSelect()" />
+		<img [src]="secondImage.pathImage" (click)="onSelect(secondImage)" />
 	</div>
 </div>
-'{{secondImage.pathImage}}'
+
+<!-- <audio src="'/game/image/pick.mp3'" autoplay ></audio> -->
+<!-- <audio id="myTune">
+  <source src="'/game/sound/pick.mp3'">
+</audio> -->
