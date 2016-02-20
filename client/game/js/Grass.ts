@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 
 @Component({
+	selector: 'grass',
 	templateUrl: `/game/html/grass.svg`,
 })
 export class Grass implements OnInit {

@@ -5,6 +5,7 @@ import {Grass} from '/game/js/Grass.ts';
 @Component({
 	templateUrl: `/game/html/Garden.html`,
 	bindings: [Grass],
+	directives:[Grass]
 	host: {
 		'(window:keydown)': 'toggleLawnMower($event,true)',
 		'(window:keyup)': 'toggleLawnMower($event,false)',
