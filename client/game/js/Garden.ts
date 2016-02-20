@@ -1,16 +1,14 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
+import {Grass} from '/game/js/Grass.ts';
 
 @Component({
 	templateUrl: `/game/html/Garden.html`,
+	bindings: [Grass]
 })
-export class Garden implements OnInit {
-	grass: number = 0;
-	timeout: string;
-	counter: number = 0;
-
+export class Garden{
 	constructor(private _router: Router){
-
+		_grass.ngOnInit();
 	}
 	onSelect() {
 		this._router.navigate(['Animals']);
@@ -21,19 +19,8 @@ export class Garden implements OnInit {
 		if(++this.counter==10){
 			this._router.navigate(['Animals']);
 		}else{
-			this.grass=0;
-			clearTimeout(this.timeout);
-			this.levelUpGrass();
+			_grass.initGrass();
 		}
 		console.log('onSelectGrass');
-	}
-	ngOnInit() {
-		console.log('init called');
-		this.levelUpGrass();
-	}
-	levelUpGrass(){
-		this.timeout = setTimeout(function(){
-			if(++this.grass<5) this.levelUpGrass();
-		}, 1000);
 	}
 }
