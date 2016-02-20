@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 	 viewBox="-13 -287 1104 1062" enable-background="new -13 -287 1104 1062" xml:space="preserve">
-<g *ngIf="weed>=1" id="weed1">
+<g *ngIf="level>=1" id="weed1">
 	<g id="weed1_1_">
 		<g id="g58">
 			<g id="g60">
@@ -103,7 +100,7 @@
 		</g>
 	</g>
 </g>
-<g *ngIf="weed>=2" id="weed2">
+<g *ngIf="level>=2" id="weed2">
 	<g id="weed2_1_">
 		<g id="g84">
 			<g id="g86_1_">
@@ -194,7 +191,7 @@
 		</g>
 	</g>
 </g>
-<g *ngIf="weed>=4" id="weed3">
+<g *ngIf="level>=4" id="weed3">
 	<g id="weed3_1_">
 		
 			<linearGradient id="path30_3_" gradientUnits="userSpaceOnUse" x1="-299.8315" y1="187.0373" x2="-269.2794" y2="187.0373" gradientTransform="matrix(-17.2547 4.5877 -4.5877 -17.2547 -3755.8301 4914.8877)">
@@ -322,7 +319,7 @@
 			c-3.2-3.1-14-9.1-22.3-8.3c-4.9,0.6-4.5-0.1-9.1,1C541.9,87.2,536.3,94.2,531.9,101.1z"/>
 	</g>
 </g>
-<g *ngIf="weed>=4" id="weed4">
+<g *ngIf="level>=4" id="weed4">
 	<g id="weed4_1_">
 		
 			<linearGradient id="path30_4_" gradientUnits="userSpaceOnUse" x1="-37.8502" y1="-25.8298" x2="3.7595" y2="-25.8298" gradientTransform="matrix(-18.3232 1.8451 -1.8451 -18.3232 -159.8616 -133.9401)">
@@ -468,7 +465,7 @@
 			c-2.1,11.9-3.8,19.3-4.9,22.2L525.2,112.4L525.2,112.4z"/>
 	</g>
 </g>
-<g *ngIf="weed>=5" id="weed5">
+<g *ngIf="level>=5" id="weed5">
 	<g id="weed5_1_">
 		
 			<linearGradient id="path30_5_" gradientUnits="userSpaceOnUse" x1="-45.597" y1="-15.6427" x2="16.8518" y2="-15.6427" gradientTransform="matrix(-14.5388 1.464 -1.464 -14.5388 -78.275 -0.6998)">
