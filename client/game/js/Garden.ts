@@ -3,7 +3,6 @@ import {Router} from 'angular2/router';
 
 @Component({
 	templateUrl: `/game/html/Garden.html`,
-	styleUrls: ['/game/css/Garden.css'],
 })
 export class Garden{
 	constructor(
