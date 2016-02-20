@@ -2,6 +2,7 @@ var User = require('./databases/User');
 
 
 module.exports = function(app, passport, express) {
+	//var router = express.Router();
 	app.get('/logout', function (req, res) {
 		req.logout();
 		res.redirect('/');
@@ -14,6 +15,9 @@ module.exports = function(app, passport, express) {
 		successRedirect: '/',
 		failureRedirect: '/'
 	}));
+	app.get("/getMe",function(req,res){
+		res.json(req.user);
+	});
 };
 // } ensure user login{
 	function isLoggedIn(req, res, next) {
