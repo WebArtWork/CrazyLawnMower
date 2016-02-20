@@ -2,6 +2,15 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('./databases/User');
 
 module.exports = function(app, passport) {
+	passport.serializeUser(function(user, done) {
+		done(null, user.id);
+	});
+
+	passport.deserializeUser(function(id, done) {
+		User.findById(id, function(err, user) {
+			done(err, user);
+		});
+	});
 
 	passport.use('local-login', new LocalStrategy({
 		usernameField : 'username',
@@ -24,6 +33,8 @@ module.exports = function(app, passport) {
 		passReqToCallback : true
 	},
 	function(req, username, password, done) {
+		console.log(req.body);
+		console.log("fffffffff");
 		User.findOne({
 			'username':username
 		},function(err, user) {
@@ -32,10 +43,8 @@ module.exports = function(app, passport) {
 			else{
 				var newUser = new User();
 				newUser.username= username;
-				newUser.fullName= req.body.fullName;
-				newUser.email= req.body.email;
 				newUser.password= newUser.generateHash(password);
-				newUser.profileUrl= 'id'+Date.now();
+				//newUser.profileUrl= 'id'+Date.now();
 				newUser.save(function(err) {
 					if (err) throw err;
 					return done(null, newUser);

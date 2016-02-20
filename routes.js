@@ -2,8 +2,8 @@ module.exports = function(app) {
 	// Sass CSS
 	var sassMiddleware = require('node-sass-middleware');
 	app.use(sassMiddleware({
-		src: __dirname+'/client/scss',
-		dest: __dirname+'/client',
+		src: __dirname+'/scss',
+		dest: __dirname,
 		debug: true,
 		outputStyle: 'compressed',
 		force: true
@@ -25,9 +25,10 @@ module.exports = function(app) {
 		res.sendFile(__dirname+'/client/game/' + req.params[0]);
 	});
 	app.get('/', function(req, res) {
+		console.log(req.user);
 		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
 	app.get('*', function(req, res) {
-		res.sendFile(__dirname+'/client/game/html/index.html');
+		res.redirect('/');
 	});
 };
