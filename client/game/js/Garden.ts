@@ -1,10 +1,11 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {Grass} from '/game/js/Grass.ts';
+import {User} from '/game/js/User.ts';
 
 @Component({
 	templateUrl: `/game/html/Garden.html`,
-	bindings: [Grass],
+	bindings: [Grass, User]
 	directives:[Grass]
 	host: {
 		'(window:keydown)': 'toggleLawnMower($event,true)',
@@ -12,7 +13,9 @@ import {Grass} from '/game/js/Grass.ts';
 	}
 })
 export class Garden{
-	constructor(private _router: Router, private _grass: Grass){
+	constructor(private _router: Router, private _user: User){
+		//_grass.ngOnInit();
+
 	}
 	onSelect(){
 		this._router.navigate(['Animals']);
