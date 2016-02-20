@@ -35,5 +35,5 @@ module.exports = function(app) {
 
 function ensureUser(req, res, next) {
 	if (req.isAuthenticated()) return next();
-	else res.redirect('/');
+	else res.redirect('/Auth');
 }
