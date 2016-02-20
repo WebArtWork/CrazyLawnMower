@@ -36,8 +36,8 @@ app.set('view cache', true);
 
 app.use(favicon(__dirname + '/client/public/img/favicon.png'));
 
-require('./passport.js')(app, passport);
-require('./user.js')(app, passport);
+require('./server/passport.js')(app, passport);
+require('./server/user.js')(app, passport);
 require('./routes.js')(app);
 
 app.listen(port);

@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, Router} from 'angular2/router';
-import {Garden}     from '/game/js/Garden.ts';
-import {Animals}     from '/game/js/Animals.ts';
+import {Garden} from '/game/js/Garden.ts';
+import {Animals} from '/game/js/Animals.ts';
 
 @Component({
 	selector: 'my-app',
