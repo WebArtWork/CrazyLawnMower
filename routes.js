@@ -28,6 +28,6 @@ module.exports = function(app) {
 		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
 	app.get('*', function(req, res) {
-		res.redirect('/');
+		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
 };

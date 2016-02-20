@@ -5,9 +5,8 @@ import {Router} from 'angular2/router';
 	templateUrl: `/game/html/Garden.html`,
 })
 export class Garden{
-	constructor(
-		private _router: Router){
-
+	constructor(private _router: Router){
+		
 	}
 	onSelect() {
 		this._router.navigate(['Animals']);
