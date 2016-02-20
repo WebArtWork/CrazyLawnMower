@@ -20,6 +20,14 @@ module.exports = function(app) {
 	app.get('/', function(req, res) {
 		res.sendFile(__dirname+'/client/game/html/index.html');
 	});
-
-
-}
+	// Public
+	app.get('/public/:folder/:file', function(req, res) {
+		res.sendFile(__dirname+'/public/' + req.params.folder + '/' + req.params.file.replace('.map',''));
+	});
+	app.get('/', function(req, res) {
+		res.sendFile(__dirname+'/public/html/index.html');
+	});
+	app.get('*', function(req, res) {
+		res.sendFile(__dirname+'/public/html/index.html');
+	});
+};
