@@ -14,8 +14,8 @@ module.exports = function(app) {
 		res.sendFile(__dirname+'/node_modules/' + req.params[0]);
 	});
 	// Game
-	app.get('/game/:folder/:file', function(req, res) {
-		res.sendFile(__dirname+'/client/game/' + req.params.folder + '/' + req.params.file.replace('.map',''));
+	app.get('/game/*', function(req, res) {
+		res.sendFile(__dirname+'/client/game/' + req.params[0]);
 	});
 	app.get('/', function(req, res) {
 		res.sendFile(__dirname+'/client/game/html/index.html');
