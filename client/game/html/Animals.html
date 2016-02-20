@@ -1,13 +1,9 @@
-Garden Game
-<div (click)="onSelect()">GO TO GARDEN GAME</div>
-
-<!-- <img [src]="'/game/image/dog.svg'"/>
-<img [src]="'/game/image/cow.svg'"/>
-<div *ngFor="#image of animalsImage">{{image}}
-<img [src]="image"/></div> -->
-
-
-
-	 <div *ng-for="#name of animalsImage">
-		<img [src]="name"/>
-	</div>
+<div id="animalpage">
+    <div class="linktogarden" (click)="onSelect()">GO TO GARDEN GAME</div>
+    <div class="animalcell">
+        <img [src]="'/game/image/dog.svg'" />
+    </div>
+    <div class="animalcell">
+        <img [src]="'/game/image/cow.svg'" />
+    </div>
+</div>

@@ -29,6 +29,18 @@ module.exports = function(app, passport) {
 		},function(err, user) {
 			if (err) return done(err);
 			if (user) return done(null, false);
+			else{
+				var newUser = new User();
+				newUser.username= username;
+				newUser.fullName= req.body.fullName;
+				newUser.email= req.body.email;
+				newUser.password= newUser.generateHash(password);
+				newUser.profileUrl= 'id'+Date.now();
+				newUser.save(function(err) {
+					if (err) throw err;
+					return done(null, newUser);
+				});
+			}
 		});
 	}));
 };
