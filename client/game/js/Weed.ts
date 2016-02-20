@@ -4,23 +4,23 @@ import {Component, OnInit} from 'angular2/core';
 	selector: 'grass',
 	templateUrl: `/game/html/grass.svg`,
 })
-export class Grass implements OnInit {
+export class Weed implements OnInit {
 	grass: number = 0;
 	timeout: string;
 	counter: number = 0;
 
 	constructor(){
 		console.log('initialize the grass');
-		this.levelUpGrass();
+		this.levelUpWeed();
 	}
-	initGrass(){
+	initWeed(){
 		clearTimeout(this.timeout);
 		this.grass=0;
-		this.levelUpGrass();		
+		this.levelUpWeed();		
 	}
-	levelUpGrass(){
+	levelUpWeed(){
 		this.timeout = setTimeout(function(){
-			if(++this.grass<5) this.levelUpGrass();
+			if(++this.grass<5) this.levelUpWeed();
 		}, 1000);
 	}
 }
