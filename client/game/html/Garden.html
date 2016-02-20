@@ -1,5 +1,9 @@
-<div id="garden">Garden Game
+<div id="garden">
+	<span>Garden Game</span>
     <div (click)="onSelect()">GO TO Animals GAME</div>
     <div (click)="onSelectGrass()">grass</div>
     <img [src]="'/game/image/boy.svg'"/>
 </div>
+
+
+<div *ngIf="grass" (click)="onSelectGrass()">grass</div>
