@@ -9,9 +9,6 @@ export class Grass implements OnInit {
 	counter: number = 0;
 
 	constructor(){
-
-	}
-	ngOnInit() {
 		console.log('initialize the grass');
 		this.levelUpGrass();
 	}
