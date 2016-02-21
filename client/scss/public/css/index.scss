@@ -56,20 +56,21 @@ body {
     font-size: 16px;
 }
 .reg-input:focus {
-    box-shadow: inset 0 0 4px #DC242F;
+    box-shadow: inset 0 0 4px #41671D;
 }
 .reg-btn {
     color: #ffffff;
     border-radius: 6px;
     padding: 7px 10px;
-    background: #DC242F;
+    background: #41671D;
     border: none;
     outline: 0;
     font-size: 16px;
     letter-spacing: 1px;
     cursor: pointer;
     width: 160px;
+    opacity: 0.8;
 }
 .reg-btn:hover {
-    background: #fd303c;
+    opacity: 1;
 }
