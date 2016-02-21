@@ -1,0 +1,43 @@
+.linktogarden {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: blue;
+}
+
+#garden {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    cursor: none;
+    bottom: 0;
+    .grassbackgrond {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+.grassboy {
+    position: fixed;
+    width: 15%;
+    z-index: 5;
+}
+.grassboy.goleft {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+.weed {
+    position: fixed;
+    width: 100px;
+    z-index: 3;
+}
