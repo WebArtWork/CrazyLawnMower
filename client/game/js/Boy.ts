@@ -4,14 +4,14 @@ import {Component, OnInit} from 'angular2/core';
 	selector: 'boy',
 	templateUrl: `/game/html/boy.svg`,
 	host: {
-		'(mousedown)': 'turnLawnMower($event,true)',
+		//'(mousedown)': 'turnLawnMower($event,true)',
 	}
 })
 export class Boy {
 	Lawnmower: boolean = false;
 	timeout: string;
 	constructor(){}
-	turnLawnMower(){
+	turnLawnMower(e,bool){
 		this.Lawnmower=true;
 		clearTimeout(this.timeout);
 		this.timeout=setTimeout(() => {
