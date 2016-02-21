@@ -1,17 +1,28 @@
+import {Http} from 'angular2/http';
+
+@Component({
+})
 export class User{
 	username: string;
-	timeout: string;
 	level: number = 0;
 
-	constructor(){
-		console.log("111111111111111111111111111111");
-		console.log(this.user);
 
+	constructor(private _http: Http) {
+		//this.getUser();
 	}
 
+
+
 	getUser(){
-		this.http.get(this.getMe)
-					.map(res => <User[]> res.json().data)
-					.catch(this.handleError);
+
+
+		// this._http.get("/api/user/getMe")
+		// // Call map on the response observable to get the parsed people object
+		// .map(res => res.json())
+		// // Subscribe to the observable to get the parsed people object and attach it to the
+		// // component
+		// .subscribe(user => this.username = user.username, this.level = user.level);
+
+
 	}
 }

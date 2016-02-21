@@ -1,11 +1,12 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {Weed} from '/game/js/Weed.ts';
+import {User} from '/game/js/User.ts';
 import {Boy} from '/game/js/Boy.ts';
 
 @Component({
 	templateUrl: `/game/html/Garden.html`,
-	bindings: [Weed,Boy],
+	bindings: [Weed,Boy,User],
 	directives:[Weed,Boy],
 	host: {
 		'(mousemove)': 'mouseMove($event)',
@@ -20,7 +21,7 @@ export class Garden{
 	moveLeft: boolean = false;
 	lastX: number = 0;
 	weed: boolean = true;
-	constructor(private _router: Router, private _weed: Weed, private _boy: Boy){
+	constructor(private _router: Router, private _weed: Weed, private _boy: Boy, private _user: User){
 	}
 	mouseMove(e){
 		this.boyPosleft=e.x-50;
@@ -44,8 +45,8 @@ export class Garden{
 			this._weed.initWeed();
 			var pageWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 			var pageHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-			this.weedPosleft=Math.floor( (Math.random() * (pageWidth-200)) + 100);
-			this.weedPostop=Math.floor( (Math.random() * (pageHeight-200)) + 100);
+			this.weedPosleft=Math.floor( (Math.random() * (pageWidth-275)) + 100);
+			this.weedPostop=Math.floor( (Math.random() * (pageHeight-275)) + 100);
 			this.weed=false;
 			setTimeout(() => {
 				this.weed=true;

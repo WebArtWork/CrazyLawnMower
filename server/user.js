@@ -15,13 +15,11 @@ module.exports = function(app, passport, express) {
 		successRedirect: '/',
 		failureRedirect: '/'
 	}));
-	app.get("/getMe",function(req,res){
+	app.get("/api/user/getMe", ensureUser, function(req,res){
 		res.json(req.user);
 	});
 };
-// } ensure user login{
-	function isLoggedIn(req, res, next) {
-		console.log(req.isAuthenticated());
-		if (req.isAuthenticated()) return next();
-		res.send(false);
-	};
+function ensureUser(req, res, next) {
+	if (req.isAuthenticated()) return next();
+	else res.json(false);
+}
