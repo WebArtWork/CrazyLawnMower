@@ -12,7 +12,7 @@ import {Boy} from '/game/js/Boy.ts';
 		'(mousemove)': 'mouseMove($event)',
 	}
 })
-export class Garden implements OnInit {
+export class Garden {
 	counter: number = 0;
 	weedPosleft: number = 300;
 	weedPostop: number = 300;

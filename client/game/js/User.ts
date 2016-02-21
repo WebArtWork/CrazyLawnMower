@@ -1,18 +1,23 @@
-import {Http} from 'angular2/http';
-//import {Injectable} from 'angular2/core';
+//import {Http} from 'angular2/http';
+import {Component, OnInit} from 'angular2/core';
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {Injectable} from 'angular2/core';
 
-// @Component({
-//
-// })
-//@Injectable()
+
+@Component({
+	selector: 'user',
+	providers: [HTTP_PROVIDERS],
+	bindings: [Http]
+})
+@Injectable()
 export class User{
-	username: string;
-	level: number = 0;
+	//username: string;
+	//level: number = 0
 
 
-	//constructor(private _http: Http) {
+	constructor(http: Http) {
 		//this.getUser();
-	//}
+	}
 
 
 
