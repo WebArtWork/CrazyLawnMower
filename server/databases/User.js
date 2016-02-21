@@ -14,6 +14,8 @@ userSchema.methods.validPassword = function(password) {
 	return bcrypt.compareSync(password, this.password);
 };
 userSchema.methods.updateLevel = function(level,callback) {
+	console.log('level');
+	console.log(level);
 	this.level=level;
 	this.markModified('level');
 	this.save(callback);

@@ -22,11 +22,13 @@ module.exports = function(app, passport, express) {
 	});
 	app.post("/api/user/updateLevel", ensureUser, function(req,res){
 		// need to add protection delay on add level
-		console.log('updating level');
-		console.log(req.body);
-		req.user.updateLevel(req.body.level, function(){
-			res.json(true);
-		});
+		for(var key in req.body) {
+		    req.user.updateLevel(key, function(){
+				res.json(true);
+			});
+			break;
+		}
+		
 	});
 };
 function ensureUser(req, res, next) {

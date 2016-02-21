@@ -19,26 +19,15 @@ export class User{
 		this._http.get('/api/user/getMe').subscribe(res => {
 			var user = JSON.parse(res._body);
 			this.level=user.level;
-			this.updateLevel(1);
 		});
 	}
 	updateLevel(add){
 		this.level+=add;
-		console.log('updateLevel');
-		console.log(this.level);
-		console.log(add);
-		console.log('updating');
 		let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 		this._http.post('/api/user/updateLevel', this.level, { headers: headers })
 		.subscribe(res => {
-			console.log('POST');
 			console.log(res);
 		});
-
-
-
-
-
 	}
 	getLevel(){
 		return this.level;
