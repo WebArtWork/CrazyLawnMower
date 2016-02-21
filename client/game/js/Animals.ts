@@ -1,6 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
-import {TimerWrapper} from 'angular2/src/core/facade/async';
 
 @Component({
 	templateUrl: `/game/html/Animals.html`

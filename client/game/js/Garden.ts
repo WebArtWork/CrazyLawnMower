@@ -8,6 +8,7 @@ import {Boy} from '/game/js/Boy.ts';
 	bindings: [Weed,Boy],
 	directives:[Weed,Boy],
 	host: {
+		'(mousemove)': 'mouseMove($event)',
 	}
 })
 export class Garden{
@@ -16,7 +17,10 @@ export class Garden{
 	boyPosleft: number = 350;
 	boyPostop: number = 350;
 	constructor(private _router: Router, private _weed: Weed, private _boy: Boy){
-
+	}
+	mouseMove(e){
+		this.boyPosleft=e.x-100;
+		this.boyPostop=e.y-100;
 	}
 	onSelect(){
 		this._router.navigate(['Animals']);

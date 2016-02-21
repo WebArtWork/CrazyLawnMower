@@ -5,14 +5,14 @@ import {Animals} from '/game/js/Animals.ts';
 
 @Component({
 	selector: 'my-app',
-	template: `<router-outlet></router-outlet>
-	`,
+	template: `<router-outlet></router-outlet>`,
 	directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
 	{path: '/', name: 'Garden', component: Garden},
 	{path: '/Animals', name: 'Animals', component: Animals},
 ])
-export class Router {
-
+export class Router{
 }
+
+// <div id="fullScreenCoverEverything"><div class="coverscreen-in"><div class="spinner cover-spin"><div></div><img src="/game/image/logo.svg"></div></div></div>
