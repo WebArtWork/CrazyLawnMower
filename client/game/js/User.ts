@@ -11,24 +11,18 @@ import {Injectable} from 'angular2/core';
 })
 @Injectable()
 export class User{
+	_id: string;
 	username: string;
 	level: number = 0
-
-
 	constructor(private _http: Http) {
 		this.getUser();
 	}
-
-
-
 	getUser(){
 		this._http.get('/api/user/getMe').subscribe(res => {
-			console.log(res._body);
+			var user = JSON.parse(res._body);
+			this._id=user._id;
+			this.username=user.username;
+			this.level=user.level;
 		});
-
-
-
-		// this._http.get("/api/user/getMe")
-		// 
 	}
 }

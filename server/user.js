@@ -16,8 +16,11 @@ module.exports = function(app, passport, express) {
 		failureRedirect: '/'
 	}));
 	app.get("/api/user/getMe", ensureUser, function(req,res){
-		console.log(req.user);
-		res.json(req.user);
+		res.json({
+			_id: req.user._id,
+			username: req.user.username,
+			level: req.user.level
+		});
 	});
 };
 function ensureUser(req, res, next) {
