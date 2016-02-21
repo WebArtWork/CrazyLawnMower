@@ -1,6 +1,6 @@
 //import {Http} from 'angular2/http';
 import {Component, OnInit} from 'angular2/core';
-import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {Http, HTTP_PROVIDERS, Headers, RequestOptions} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
 
@@ -28,11 +28,17 @@ export class User{
 		console.log(this.level);
 		console.log(add);
 		console.log('updating');
-		this._http.post('/api/user/updateLevel',{
-			level: this.level,
-		}).subscribe(res => {
+		let headers = new Headers({ 'Content-Type': 'application/json' });
+		this._http.post('/api/user/updateLevel', this.level, { headers: headers })
+		.subscribe(res => {
+			console.log('POST');
 			console.log(res);
 		});
+
+
+
+
+
 	}
 	getLevel(){
 		return this.level;
