@@ -17,7 +17,7 @@ module.exports = function(app) {
 	app.get('/public/*', function(req, res) {
 		res.sendFile(__dirname+'/client/public/' + req.params[0]);
 	});
-	app.get('/Auth', function(req, res) {
+	app.get('/Auth',ensureNotUser, function(req, res) {
 		res.sendFile(__dirname+'/client/public/html/index.html');
 	});
 	// Game
@@ -38,4 +38,8 @@ module.exports = function(app) {
 function ensureUser(req, res, next) {
 	if (req.isAuthenticated()) return next();
 	else res.redirect('/Auth');
+}
+function ensureNotUser(req, res, next) {
+	if (!req.isAuthenticated()) return next();
+	else res.redirect('/');
 }

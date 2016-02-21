@@ -4,18 +4,30 @@ import {Component, OnInit} from 'angular2/core';
 	selector: 'boy',
 	templateUrl: `/game/html/boy.svg`,
 	host: {
-		//'(mousedown)': 'turnLawnMower($event,true)',
+		'(mousemove)': 'boyMove()',
+		'(mousedown)': 'lawnmowerTurn()',
 	}
 })
 export class Boy {
-	Lawnmower: boolean = false;
-	timeout: string;
-	constructor(){}
-	turnLawnMower(e,bool){
-		this.Lawnmower=true;
-		clearTimeout(this.timeout);
-		this.timeout=setTimeout(() => {
-			this.Lawnmower=false;
-		},5000);
+	Movement: boolean = false;
+	Cutting: boolean = false;
+	timeout1: string;
+	timeout2: string;
+	constructor(){
+		console.log('Boy has been initialized');
+	}
+	lawnmowerTurn(){
+		this.Cutting=true;
+		clearTimeout(this.timeout1);
+		this.timeout1=setTimeout(() => {
+			this.Cutting=false;
+		},3000);
+	}
+	boyMove(){
+		this.Movement=true;
+		clearTimeout(this.timeout2);
+		this.timeout2=setTimeout(() => {
+			this.Movement=false;
+		},1000);
 	}
 }

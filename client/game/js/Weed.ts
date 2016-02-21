@@ -10,8 +10,6 @@ export class Weed {
 
 	constructor(){
 		this.levelUpWeed();
-		console.log('constructorconstructor');
-		console.log(this.position);
 	}
 	initWeed(){
 		clearTimeout(this.timeout);
