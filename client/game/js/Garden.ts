@@ -19,6 +19,7 @@ export class Garden{
 	boyPostop: number = 350;
 	moveLeft: boolean = false;
 	lastX: number = 0;
+	weed: boolean = true;
 	constructor(private _router: Router, private _weed: Weed, private _boy: Boy){
 	}
 	mouseMove(e){
@@ -36,9 +37,6 @@ export class Garden{
 		var diffWidth = this.weedPosleft-this.boyPosleft-50;
 		if(diffHeight<50&&diffHeight>-50&&diffWidth<120&&diffWidth>-100) this.weedOnCatch();
 	}
-	onSelect(){
-		this._router.navigate(['Animals']);
-	}
 	weedOnCatch(){
 		if(++this.counter==10){
 			this._router.navigate(['Animals']);
@@ -48,10 +46,11 @@ export class Garden{
 			var pageHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 			this.weedPosleft=Math.floor( (Math.random() * (pageWidth-200)) + 100);
 			this.weedPostop=Math.floor( (Math.random() * (pageHeight-200)) + 100);
+			this.weed=false;
+			setTimeout(() => {
+				this.weed=true;
+			},200);
+			
 		}
-	}
-	toggleLawnMower(e,bool){
-		console.log(e);
-		console.log(bool);
 	}
 }

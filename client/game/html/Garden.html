@@ -3,5 +3,5 @@
 
 	<boy class="grassboy" [ngStyle]="{left: boyPosleft+'px', top: boyPostop+'px'}" [ngClass]="{'goleft': moveLeft}"></boy>
 
-	<weed class="weed" [ngStyle]="{left: weedPosleft+'px', top: weedPostop+'px'}"></weed>
+	<weed class="weed" *ngIf="weed" [ngStyle]="{left: weedPosleft+'px', top: weedPostop+'px'}"></weed>
 </div>

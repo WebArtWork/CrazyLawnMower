@@ -17,8 +17,8 @@ export class Weed {
 		this.levelUpWeed();		
 	}
 	levelUpWeed(){
+		if(++this.level<6)
 		this.timeout=setTimeout(() => {
-			console.log('weed level '+this.level);
 			if(++this.level<6) this.levelUpWeed();
 		},1000);
 	}

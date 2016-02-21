@@ -36,9 +36,6 @@ export class Animals implements OnInit{
 		}
 
 	}
-	onGarden() {
-		this._router.navigate(['Garden']);
-	}
 
 	ngOnInit() {
 		x=Math.floor((Math.random() * 13) + 1);
