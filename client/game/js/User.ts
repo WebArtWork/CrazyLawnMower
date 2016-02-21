@@ -28,7 +28,7 @@ export class User{
 		console.log(this.level);
 		console.log(add);
 		console.log('updating');
-		let headers = new Headers({ 'Content-Type': 'application/json' });
+		let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 		this._http.post('/api/user/updateLevel', this.level, { headers: headers })
 		.subscribe(res => {
 			console.log('POST');
