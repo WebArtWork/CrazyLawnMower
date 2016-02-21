@@ -42,7 +42,7 @@ export class Animals implements OnInit{
 					this._router.navigate(['Garden']);
 				},5000);
 			}else{
-				audio.pause();
+				//audio.pause();
 				if (checkAnimal==animal) console.log('the right choice');
 				else console.log('the wrong choice');
 			}

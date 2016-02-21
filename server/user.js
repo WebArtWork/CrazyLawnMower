@@ -17,9 +17,15 @@ module.exports = function(app, passport, express) {
 	}));
 	app.get("/api/user/getMe", ensureUser, function(req,res){
 		res.json({
-			_id: req.user._id,
-			username: req.user.username,
 			level: req.user.level
+		});
+	});
+	app.post("/api/user/updateLevel", ensureUser, function(req,res){
+		// need to add protection delay on add level
+		console.log('updating level');
+		console.log(req.body);
+		req.user.updateLevel(req.body.level, function(){
+			res.json(true);
 		});
 	});
 };

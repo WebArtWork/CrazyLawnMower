@@ -23,6 +23,8 @@ export class Garden {
 	weed: boolean = true;
 
 	constructor(private _router: Router, private _weed: Weed, private _boy: Boy,private _user: User){
+		console.log('this._user.level');
+		console.log(this._user.level);
 	}
 	mouseMove(e){
 		this.boyPosleft=e.x-50;
