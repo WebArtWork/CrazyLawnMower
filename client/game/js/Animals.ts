@@ -52,8 +52,8 @@ export class Animals implements OnInit{
 	}
 
 	ngOnInit() {
-		x=Math.floor((Math.random() * 15) );
-		y=Math.floor((Math.random() * 15) );
+		x=Math.floor((Math.random() * 14) );
+		y=Math.floor((Math.random() * 14) );
 		if (x==y) x=x-1;
 		console.log(x,y);
 		console.log(this._user.level);
@@ -70,7 +70,7 @@ export class Animals implements OnInit{
 				z=x;
 				checkAnimal=this.firstImage;
 			}
-			var audioHightLevel = new Audio(this.IMAGES[z].sound);
+			var audio = new Audio(this.IMAGES[z].sound);
 			audio.play();
 		}
 
