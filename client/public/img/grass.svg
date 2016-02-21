@@ -8,7 +8,7 @@
 ]>
 <svg version="1.1" id="Untitled-1_xA0_Image_1_" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" viewBox="0 0 1920 1200" enable-background="new 0 0 1920 1200" xml:space="preserve">
+	 x="0px" y="0px" viewBox="0 0 1920 1200" enable-background="new 0 0 1920 1200" xml:space="preserve" preserveAspectRatio="xMinYMin slice">
 <symbol  id="New_Symbol_3" viewBox="-20.2 -11.1 40.3 22.2">
 	<radialGradient id="SVGID_1_" cx="4.980457e-002" cy="0" r="16.2681" gradientUnits="userSpaceOnUse">
 		<stop  offset="0" style="stop-color:#0099FF"/>

@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Chewy);
 html {
     height: 100%;
     width: 100%;
@@ -35,6 +36,13 @@ body {
             margin: 10px;
         }
     }
+}
+.logo-title {
+    color: white;
+    font-size: 35px;
+    font-family: 'Chewy', cursive;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px black;
 }
 .reg-form {
     display: inline-block;

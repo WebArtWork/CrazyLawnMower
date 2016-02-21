@@ -19,11 +19,13 @@
         img {
             width: 100%;
             height: auto;
-            max-height: 500px;
+            max-height: 300px;
             cursor: pointer;
         }
     }
-    .grassbackgrond {
+    
+}
+.grassbackgrond {
         width: 100%;
         height: 100%;
         position: fixed;
@@ -32,4 +34,3 @@
         z-index: -1;
         display: block;
     }
-}
