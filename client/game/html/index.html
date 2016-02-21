@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<base href="/">
+    <base href="/">
 
-	<title>Crazy Lawn Mower</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/game/css/index.css">
-	<link rel="stylesheet" href="/game/css/Animals.css">
-	<link rel="stylesheet" href="/game/css/Garden.css">
+    <title>Crazy Lawn Mower</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/game/css/index.css">
+    <link rel="stylesheet" href="/game/css/Animals.css">
+    <link rel="stylesheet" href="/game/css/Garden.css">
 
-	<!-- 1. Load libraries -->
-	<!-- IE required polyfills, in this exact order -->
-	<script src="node_modules/es6-shim/es6-shim.min.js"></script>
-	<script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
 
-	<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-	<script src="node_modules/systemjs/dist/system.src.js"></script>
-	<script src="https://code.angularjs.org/tools/typescript.js"></script>
-	<script src="node_modules/rxjs/bundles/Rx.js"></script>
-	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-	<script src="https://code.angularjs.org/2.0.0-beta.6/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/router.dev.js"></script>
 
-	<!-- 2. Configure SystemJS -->
-	<script>
-		System.config({
-			transpiler: 'typescript',
-			typescriptOptions: {
-				emitDecoratorMetadata: true
-			},
-			packages: {
-				'app': {
-					defaultExtension: 'ts'
-				}
-			}
-		});
-		System.import('/game/js/main.ts').then(null, console.error.bind(console));
-	</script>
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: {
+                emitDecoratorMetadata: true
+            },
+            packages: {
+                'app': {
+                    defaultExtension: 'ts'
+                }
+            }
+        });
+        System.import('/game/js/main.ts').then(null, console.error.bind(console));
+    </script>
 
 </head>
 
 <body>
-	<my-app>loading...</my-app>
+    <my-app>
+        <div id="fullScreenCoverEverything">
+            <div class="coverscreen-in">
+                <div class="spinner cover-spin">
+                    <div></div>
+                    <img src="/game/image/logo.svg">
+                </div>
+                <div>
+                    <div class="textunderspinner">I'm soon finished thinking...</div>
+                </div>
+            </div>
+        </div>
+    </my-app>
 </body>
 
 </html>
