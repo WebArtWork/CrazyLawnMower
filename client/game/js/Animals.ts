@@ -21,10 +21,12 @@ export class Animals implements OnInit{
 		{pathImage: '/game/image/sheep.svg',sound:'/game/sound/sheep.mp3',time: 5000},
 		{pathImage:'/game/image/wolf.svg',sound:'/game/sound/wolf.mp3',time: 4000}
 	];
+	alow: boolean = true;
 
 	constructor(private _router: Router){}
 	onSelect(animal) {		
-		if (alow) {
+		if (this.alow) {
+			this.alow=false;
 			var audio = new Audio(animal.sound);
 			audio.play();
 			setTimeout(() => {

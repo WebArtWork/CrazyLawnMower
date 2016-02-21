@@ -41,8 +41,8 @@ export class Garden{
 			this._weed.initWeed();
 			var pageWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 			var pageHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-			this.weedPosleft=Math.floor( (Math.random() * (pageWidth-100)) + 100);
-			this.weedPostop=Math.floor( (Math.random() * (pageHeight-100)) + 100);
+			this.weedPosleft=Math.floor( (Math.random() * (pageWidth-200)) + 100);
+			this.weedPostop=Math.floor( (Math.random() * (pageHeight-200)) + 100);
 		}
 	}
 	toggleLawnMower(e,bool){
