@@ -9,8 +9,9 @@ export class Weed {
 	timeout: string;
 
 	constructor(){
-		console.log('initialize the weed');
 		this.levelUpWeed();
+		console.log('constructorconstructor');
+		console.log(this.position);
 	}
 	initWeed(){
 		clearTimeout(this.timeout);

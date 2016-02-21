@@ -1,5 +1,4 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 viewBox="-13 -287 1104 1062" enable-background="new -13 -287 1104 1062" xml:space="preserve">
+<svg version="1.1" x="0px" y="0px" viewBox="-13 -287 1104 1062" enable-background="new -13 -287 1104 1062">
 <g *ngIf="level>=1" id="weed1">
 	<g id="weed1_1_">
 		<g id="g58">

@@ -5,23 +5,22 @@ import {Weed} from '/game/js/Weed.ts';
 @Component({
 	templateUrl: `/game/html/Garden.html`,
 	bindings: [Weed],
-	directives:[Weed]
+	directives:[Weed],
 	host: {
-		'(window:keydown)': 'toggleLawnMower($event,true)',
-		'(window:keyup)': 'toggleLawnMower($event,false)',
+		'(mouseup)': 'toggleLawnMower($event,false)',
+		'(mousedown)': 'toggleLawnMower($event,true)',
+		'(mousemove)': 'moveLawnMower($event,true)',
 	}
 })
 export class Garden{
-	left: number = 320;
-	top: number = 120;
+	weedPosleft: number = 50;
+	weedPostop: number = 50;
+	boyPosleft: number = 350;
+	boyPostop: number = 350;
 	constructor(private _router: Router, private _weed: Weed){
-	}
-	onSelect(){
-		this._router.navigate(['Animals']);
+
 	}
 	onSelectWeed(){
-		console.log('this.counter');
-		console.log(this.counter);
 		if(++this.counter==10){
 			this._router.navigate(['Animals']);
 		}else{

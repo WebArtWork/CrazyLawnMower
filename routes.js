@@ -2,8 +2,8 @@ module.exports = function(app) {
 	// Sass CSS
 	var sassMiddleware = require('node-sass-middleware');
 	app.use(sassMiddleware({
-		src: __dirname+'/scss',
-		dest: __dirname,
+		src: __dirname+'/client/scss',
+		dest: __dirname+'/client',
 		debug: true,
 		outputStyle: 'compressed',
 		force: true
