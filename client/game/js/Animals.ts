@@ -34,18 +34,18 @@ export class Animals implements OnInit{
 	onSelect(animal) {
 		if (this.allow) {
 			this.allow=false;
-			//if (this._user.level>0) {
+			if (this._user.level>0) {
 				var audio = new Audio(animal.sound);
 				audio.play();
 				setTimeout(() => {
 					audio.pause();
 					this._router.navigate(['Garden']);
 				},5000);
-			//}else{
-			// 	audio.pause();
-			// 	if (checkAnimal==animal) console.log('the right choice');
-			// 	else console.log('the wrong choice');
-			// }
+			}else{
+				audio.pause();
+				if (checkAnimal==animal) console.log('the right choice');
+				else console.log('the wrong choice');
+			}
 
 		}
 
@@ -54,25 +54,25 @@ export class Animals implements OnInit{
 	ngOnInit() {
 		x=Math.floor((Math.random() * 15) );
 		y=Math.floor((Math.random() * 15) );
-		if (x==y) x=x-1;		
+		if (x==y) x=x-1;
 		console.log(x,y);
 		console.log(this._user.level);
-		//if (this._user.level>0) {
+		if (this._user.level>0) {
 			this.firstImage=this.IMAGES[x];
 			this.secondImage=this.IMAGES[y];
-		// }else{
-		// 	this.firstImage=this.IMAGES[x];
-		// 	this.secondImage=this.IMAGES[y];
-		// 	if (x>y) {
-		// 		z=y;
-		// 		checkAnimal=this.secondImage;
-		// 	}else {
-		// 		z=x;
-		// 		checkAnimal=this.firstImage;
-		// 	}
-		// 	var audioHightLevel = new Audio(this.IMAGES[z].sound);
-		// 	audio.play();
-		// }
+		}else{
+			this.firstImage=this.IMAGES[x];
+			this.secondImage=this.IMAGES[y];
+			if (x>y) {
+				z=y;
+				checkAnimal=this.secondImage;
+			}else {
+				z=x;
+				checkAnimal=this.firstImage;
+			}
+			var audioHightLevel = new Audio(this.IMAGES[z].sound);
+			audio.play();
+		}
 
 	 }
 }
