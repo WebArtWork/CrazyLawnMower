@@ -34,15 +34,14 @@ export class Animals implements OnInit{
 	onSelect(animal) {
 		if (this.allow) {
 			this.allow=false;
-			if (this._user.level>0) {
+			if (this._user.level>=0 && this._user.level<50) {
 				var audio = new Audio(animal.sound);
 				audio.play();
 				setTimeout(() => {
 					audio.pause();
 					this._router.navigate(['Garden']);
-				},5000);
-			}else{
-				//audio.pause();
+				},6000);
+			}else if (this._user.level>=50) {
 				if (checkAnimal==animal) console.log('the right choice');
 				else console.log('the wrong choice');
 			}
@@ -52,15 +51,14 @@ export class Animals implements OnInit{
 	}
 
 	ngOnInit() {
-		x=Math.floor((Math.random() * 14) );
-		y=Math.floor((Math.random() * 14) );
-		if (x==y) x=x-1;
-		console.log(x,y);
-		console.log(this._user.level);
-		if (this._user.level>0) {
+		x=Math.floor((Math.random() * 16) );
+		y=Math.floor((Math.random() * 16) );
+		if (x==y) x+=1;
+		if (x==16) x=0;
+		if (this._user.level>=0 && this._user.level<50) {
 			this.firstImage=this.IMAGES[x];
 			this.secondImage=this.IMAGES[y];
-		}else{
+		}else if(this._user.level>=50){
 			this.firstImage=this.IMAGES[x];
 			this.secondImage=this.IMAGES[y];
 			if (x>y) {
