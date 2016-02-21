@@ -12,7 +12,7 @@ import {Boy} from '/game/js/Boy.ts';
 		'(mousemove)': 'mouseMove($event)',
 	}
 })
-export class Garden{
+export class Garden implements OnInit {
 	counter: number = 0;
 	weedPosleft: number = 300;
 	weedPostop: number = 300;
@@ -21,7 +21,8 @@ export class Garden{
 	moveLeft: boolean = false;
 	lastX: number = 0;
 	weed: boolean = true;
-	constructor(private _router: Router, private _weed: Weed, private _boy: Boy, private _user: User){
+
+	constructor(private _router: Router, private _weed: Weed, private _boy: Boy,private _user: User){
 	}
 	mouseMove(e){
 		this.boyPosleft=e.x-50;
@@ -51,7 +52,7 @@ export class Garden{
 			setTimeout(() => {
 				this.weed=true;
 			},200);
-			
+
 		}
 	}
 }

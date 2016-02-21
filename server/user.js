@@ -15,9 +15,9 @@ module.exports = function(app, passport, express) {
 		successRedirect: '/',
 		failureRedirect: '/'
 	}));
-	app.get("/api/user/getMe", ensureUser, function(req,res){
-		res.json(req.user);
-	});
+	// app.get("/api/user/getMe", ensureUser, function(req,res){
+	// 	res.json(req.user);
+	// });
 };
 function ensureUser(req, res, next) {
 	if (req.isAuthenticated()) return next();

@@ -24,7 +24,7 @@ export class Animals implements OnInit{
 	alow: boolean = true;
 
 	constructor(private _router: Router){}
-	onSelect(animal) {		
+	onSelect(animal) {
 		if (this.alow) {
 			this.alow=false;
 			var audio = new Audio(animal.sound);
@@ -32,7 +32,7 @@ export class Animals implements OnInit{
 			setTimeout(() => {
 				audio.pause();
 				this._router.navigate(['Garden']);
-			},5000);
+			},animal.time);
 		}
 
 	}
@@ -40,7 +40,7 @@ export class Animals implements OnInit{
 	ngOnInit() {
 		x=Math.floor((Math.random() * 13) + 1);
 		y=Math.floor((Math.random() * 13) + 1);
-		if (x==y) x=x+1;
+		if (x==y) x=x-1;
 		console.log(x,y);
 		this.firstImage=this.IMAGES[x];
 		this.secondImage=this.IMAGES[y];
