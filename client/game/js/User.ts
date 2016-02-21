@@ -22,9 +22,13 @@ export class User{
 
 
 	getUser(){
-		this._http.get("/api/user/getMe")
-		.subscribe(res => {
-			console.log(res);
+		this._http.get('/api/user/getMe').subscribe(res => {
+			console.log(res._body);
 		});
+
+
+
+		// this._http.get("/api/user/getMe")
+		// 
 	}
 }
