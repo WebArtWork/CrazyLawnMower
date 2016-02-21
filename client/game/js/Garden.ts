@@ -24,12 +24,17 @@ export class Garden{
 	mouseMove(e){
 		this.boyPosleft=e.x-50;
 		this.boyPostop=e.y-100;
+		var pageWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+		var pageHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		if(this.boyPosleft>pageWidth-275) this.boyPosleft=pageWidth-275;
+		if(this.boyPostop>pageHeight-275) this.boyPostop=pageHeight-275;
+
 		if(e.x>this.lastX) this.moveLeft=false;
 		else this.moveLeft=true;
 		this.lastX=e.x;
 		var diffHeight = this.weedPostop-this.boyPostop-150;
 		var diffWidth = this.weedPosleft-this.boyPosleft-50;
-		if(diffHeight<50&&diffHeight>-50&&diffWidth<120&&diffWidth>-100) this.weedOnCatch()
+		if(diffHeight<50&&diffHeight>-50&&diffWidth<120&&diffWidth>-100) this.weedOnCatch();
 	}
 	onSelect(){
 		this._router.navigate(['Animals']);
