@@ -5,7 +5,7 @@ import {Animals} from '/game/js/Animals.ts';
 
 @Component({
 	selector: 'my-app',
-	template: `<router-outlet></router-outlet>`,
+	template: `<img class="grassbackgrond" [src]="'/public/img/grass.svg'"/><router-outlet></router-outlet>`,
 	directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
