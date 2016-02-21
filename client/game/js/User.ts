@@ -23,6 +23,8 @@ export class User{
 			this._id=user._id;
 			this.username=user.username;
 			this.level=user.level;
+			console.log(this.username);
+			console.log(this.level);
 		});
 	}
 }
