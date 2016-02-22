@@ -6,7 +6,7 @@ import {Grass} from '/game/js/Grass.ts';
 
 @Component({
 	selector: 'my-app',
-	template: `<grass></grass><router-outlet></router-outlet>`,
+	template: `<grass class="grassbackgrond"></grass><router-outlet></router-outlet>`,
 	bindings: [Grass],
 	directives: [ROUTER_DIRECTIVES,Grass]
 })
