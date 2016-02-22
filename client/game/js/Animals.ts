@@ -44,7 +44,7 @@ export class Animals implements OnInit{
 	onSelect(point) {
 		if (this.allow) {
 			this.allow=false;
-			if (this._user.getLevel()>=5000) {
+			if (this._user.level>=5000) {
 				if (this.z==point){
 					this._user.updateLevel(20);
 				}else{

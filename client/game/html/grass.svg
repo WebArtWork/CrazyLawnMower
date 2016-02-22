@@ -6643,7 +6643,7 @@ z2oWc8Fn4FR+Nhf8vwyqal1oL/l6WHKc0jsOjkVGNfy63ox0dl9fgnY//9k=">
 			C43.7,60.7,52.1,40.1,52.1,40.1z"/>
 		<path fill="#CBC891" d="M63.2,58.6l9.4-18.5l10.6,20.2l-0.3,8.8c-0.2,6.7-0.2,12.2-0.1,16.5l1.4,40.7l-19.7-1L63.2,58.6z"/>
 		<polygon fill="#CBC891" points="91.6,41.4 101.4,60.2 101.9,126.6 83.7,126.8 83.1,62 		"/>
-		<text transform="matrix(1.001 0 0 1 49.8989 100.1924)" fill="#280000" font-family="'Arial-BoldMT'" font-size="40.2327">13</text>
+		<text transform="matrix(1.001 0 0 1 49.8989 100.1924)" fill="#280000" font-family="'Arial-BoldMT'" font-size="40.2327">{{_user.levelView}}</text>
 	</g>
 </g>
 </svg>
