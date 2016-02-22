@@ -1,5 +1,5 @@
 <svg version="1.1" x="0px" y="0px" viewBox="-13 -287 1104 1062" enable-background="new -13 -287 1104 1062">
-<g *ngIf="level>=1" id="weed1">
+<g id="weed1">
 	<g id="weed1_1_">
 		<g id="g58">
 			<g id="g60">
@@ -190,7 +190,7 @@
 		</g>
 	</g>
 </g>
-<g *ngIf="level>=4" id="weed3">
+<g *ngIf="level>=3" id="weed3">
 	<g id="weed3_1_">
 		
 			<linearGradient id="path30_3_" gradientUnits="userSpaceOnUse" x1="-299.8315" y1="187.0373" x2="-269.2794" y2="187.0373" gradientTransform="matrix(-17.2547 4.5877 -4.5877 -17.2547 -3755.8301 4914.8877)">
