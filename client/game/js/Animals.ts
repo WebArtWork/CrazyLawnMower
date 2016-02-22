@@ -35,20 +35,20 @@ export class Animals implements OnInit{
 		this.y=Math.floor((Math.random() * 16) );
 		if (this.x==this.y) this.x+=1;
 		if (this.x==16) this.x=0;
-		if(this._user.level>=5000){
+		if(this._user.level>=300){
 			this.z = Math.random() < 0.5 ? this.x : this.x;
-			var audio = new Audio(this.IMAGES[z].sound);
+			var audio = new Audio(this.IMAGES[this.z].sound);
 			audio.play();
 		}
 	}
 	onSelect(point) {
 		if (this.allow) {
 			this.allow=false;
-			if (this._user.level>=5000) {
+			if (this._user.level>=300) {
 				if (this.z==point){
 					this._user.updateLevel(20);
 				}else{
-					this._user.updateLevel(-30);
+					this._user.updateLevel(-100);
 				}
 				this._router.navigate(['Garden']);
 			}else{

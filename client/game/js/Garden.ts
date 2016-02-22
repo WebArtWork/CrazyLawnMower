@@ -10,6 +10,7 @@ import {Boy} from '/game/js/Boy.ts';
 	directives:[Weed,Boy],
 	host: {
 		'(mousemove)': 'mouseMove($event)',
+		'(mousedown)': 'lawnmowerTurn()',
 	}
 })
 export class Garden {
@@ -21,10 +22,10 @@ export class Garden {
 	moveLeft: boolean = false;
 	lastX: number = 0;
 	weed: boolean = true;
+	Cutting: boolean = false;
 
 	constructor(private _router: Router, private _weed: Weed, private _boy: Boy,private _user: User){
-		console.log('this._user.level');
-		console.log(this._user.level);
+		console.log('New Level is: '+this._user.level);
 	}
 	mouseMove(e){
 		this.boyPosleft=e.x-50;
@@ -37,9 +38,11 @@ export class Garden {
 		if(diffHeight<50&&diffHeight>-50&&diffWidth<120&&diffWidth>-100) this.weedOnCatch();
 	}
 	weedOnCatch(){
+		if(this._user.level>=300&&!this.Cutting) return;
 		if(++this.counter==10){
 			this._router.navigate(['Animals']);
 		}else{
+			this._user.updateLevel(parseInt(20-(this._weed.level*4)));
 			this._weed.initWeed();
 			var pageWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 			var pageHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -51,5 +54,12 @@ export class Garden {
 			},200);
 
 		}
+	}
+	lawnmowerTurn(){
+		this.Cutting=true;
+		clearTimeout(this.timeout1);
+		this.timeout1=setTimeout(() => {
+			this.Cutting=false;
+		},3000);
 	}
 }
