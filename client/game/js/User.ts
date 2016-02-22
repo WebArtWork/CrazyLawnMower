@@ -22,6 +22,7 @@ export class User{
 		});
 	}
 	updateLevel(add){
+		if(add==0) return;
 		this.level+=add;
 		this.levelView=parseInt(this.level/100)+1;
 		// this is bad, need to wait or find better way of sending info.

@@ -5,7 +5,7 @@ import {User} from '/game/js/User.ts';
 	selector: 'grass',
 	templateUrl: `/game/html/grass.svg`,
 })
-export class Grass {	
+export class Grass{	
 	constructor(,private _user: User){
 		console.log('Grass has been initialized');
 	}

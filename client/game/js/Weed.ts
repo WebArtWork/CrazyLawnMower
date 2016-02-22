@@ -5,7 +5,7 @@ import {Component} from 'angular2/core';
 	templateUrl: `/game/html/weed.svg`,
 })
 export class Weed {
-	level: number = 1;
+	level: number = 0;
 	timeout: string;
 
 	constructor(){
@@ -13,13 +13,12 @@ export class Weed {
 	}
 	initWeed(){
 		clearTimeout(this.timeout);
-		this.level=1;
+		this.level=0;
 		this.levelUpWeed();		
 	}
 	levelUpWeed(){
-		if(++this.level<6)
 		this.timeout=setTimeout(() => {
-			if(++this.level<6) this.levelUpWeed();
+			if(++this.level<5) this.levelUpWeed();
 		},1000);
 	}
 }
