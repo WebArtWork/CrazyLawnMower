@@ -48,7 +48,7 @@ export class Animals implements OnInit{
 				if (this.z==point){
 					this._user.updateLevel(20);
 				}else{
-					this._user.updateLevel(-30);
+					this._user.updateLevel(-100);
 				}
 				this._router.navigate(['Garden']);
 			}else{
