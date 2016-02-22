@@ -11,14 +11,12 @@ import {Injectable} from 'angular2/core';
 })
 @Injectable()
 export class User{
-	level: number = 0
+	level: number = -1;
 	constructor(private _http: Http) {
-		this.getUser();
-	}
-	getUser(){
-		this._http.get('/api/user/getMe').subscribe(res => {
+		this._http.get('/api/user/getMyLevel').subscribe(res => {
 			var user = JSON.parse(res._body);
 			this.level=user.level;
+			console.log('Level Accepted');
 		});
 	}
 	updateLevel(add){
@@ -26,11 +24,7 @@ export class User{
 		let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 		this._http.post('/api/user/updateLevel', this.level, { headers: headers })
 		.subscribe(res => {
-			console.log(res);
+			console.log('Level Updated');
 		});
-	}
-	getLevel(){
-		return this.level;
-
 	}
 }

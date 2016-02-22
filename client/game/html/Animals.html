@@ -1,8 +1,8 @@
 <div id="animalpage">
 	<div class="animalcell">
-		<img [src]="firstImage.pathImage" (click)="onSelect(firstImage)" />
+		<img [src]="IMAGES[x]&&IMAGES[x].pathImage" (click)="onSelect(x)" />
 	</div>
 	<div class="animalcell">
-		<img [src]="secondImage.pathImage" (click)="onSelect(secondImage)" />
+		<img [src]="IMAGES[y]&&IMAGES[y].pathImage" (click)="onSelect(y)" />
 	</div>
 </div>

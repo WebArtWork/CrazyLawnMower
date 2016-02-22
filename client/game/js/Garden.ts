@@ -6,7 +6,7 @@ import {Boy} from '/game/js/Boy.ts';
 
 @Component({
 	templateUrl: `/game/html/Garden.html`,
-	bindings: [Weed,Boy,User],
+	bindings: [Weed,Boy],
 	directives:[Weed,Boy],
 	host: {
 		'(mousemove)': 'mouseMove($event)',

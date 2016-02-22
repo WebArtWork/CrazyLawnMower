@@ -1,10 +1,9 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, NgZone} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {User} from '/game/js/User.ts';
 
 @Component({
-	templateUrl: `/game/html/Animals.html`,
-	bindings: [User]
+	templateUrl: `/game/html/Animals.html`
 })
 export class Animals implements OnInit{
 	IMAGES = [
@@ -26,51 +25,41 @@ export class Animals implements OnInit{
 		{pathImage:'/game/image/frog.svg',sound:'/game/sound/frog.mp3'}
 	];
 	allow: boolean = true;
-	checkAnimal: srting;
+	checkAnimal: string;
+	x: number;
+	y: number;
+	z: number;
 
-	constructor(private _router: Router,private _user: User){
-
+	constructor(private _router: Router,private _user: User,private zone: NgZone){
+		this.x=Math.floor((Math.random() * 16) );
+		this.y=Math.floor((Math.random() * 16) );
+		if (this.x==this.y) this.x+=1;
+		if (this.x==16) this.x=0;
+		if(this._user.level>=5000){
+			this.z = Math.random() < 0.5 ? this.x : this.x;
+			var audio = new Audio(this.IMAGES[z].sound);
+			audio.play();
+		}
 	}
-	onSelect(animal) {
+	onSelect(point) {
 		if (this.allow) {
 			this.allow=false;
-			if (this._user.level>=0 && this._user.level<50) {
-				var audio = new Audio(animal.sound);
+			if (this._user.getLevel()>=5000) {
+				if (this.z==point){
+					this._user.updateLevel(20);
+				}else{
+					this._user.updateLevel(-30);
+				}
+				this._router.navigate(['Garden']);
+			}else{
+				this._user.updateLevel(20)
+				var audio = new Audio(this.IMAGES[point].sound);
 				audio.play();
 				setTimeout(() => {
 					audio.pause();
 					this._router.navigate(['Garden']);
 				},6000);
-			}else if (this._user.level>=50) {
-				if (checkAnimal==animal) console.log('the right choice');
-				else console.log('the wrong choice');
 			}
-
 		}
-
 	}
-
-	ngOnInit() {
-		x=Math.floor((Math.random() * 16) );
-		y=Math.floor((Math.random() * 16) );
-		if (x==y) x+=1;
-		if (x==16) x=0;
-		if (this._user.level>=0 && this._user.level<50) {
-			this.firstImage=this.IMAGES[x];
-			this.secondImage=this.IMAGES[y];
-		}else if(this._user.level>=50){
-			this.firstImage=this.IMAGES[x];
-			this.secondImage=this.IMAGES[y];
-			if (x>y) {
-				z=y;
-				checkAnimal=this.secondImage;
-			}else {
-				z=x;
-				checkAnimal=this.firstImage;
-			}
-			var audio = new Audio(this.IMAGES[z].sound);
-			audio.play();
-		}
-
-	 }
 }
